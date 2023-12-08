@@ -19,6 +19,7 @@ function Search() {
       song.songTitle.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
+    console.log(filteredItems);
     setFilteredSongs(filteredItems);
   };
   return (
