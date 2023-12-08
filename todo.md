@@ -1,1 +1,2 @@
 - Figure out to add "Sorry...I don't know that song" if song not in list
+- create controller > songController to find songs in db
