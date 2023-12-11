@@ -6,11 +6,11 @@ const Song = require("../models/songModel");
 // @route   GET /api/songs
 // @access  Public
 const getSong = asyncHandler(async (req, res) => {
-  const song = await Song.findById(req.params.id);
+  const song = await Song// Add error handling
 
-  // Add error handling
-
-  res.status(200).json(song);
+  .res
+    .status(200)
+    .json(song);
 });
 
 module.exports = {

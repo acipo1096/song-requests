@@ -26,3 +26,30 @@ export const getSongs = createAsyncThunk(
     }
   }
 );
+
+export const songSlice = createSlice({
+  name: "song",
+  initialState,
+  reducers: {
+    reset: (state) => initialState,
+  },
+  extraReducers: (builder) => {
+    builder
+      .addCase(getSongs.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(getSongs.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.isSuccess = true;
+        state.songs = action.payload;
+      })
+      .addCase(getSongs.rejected, (state, action) => {
+        state.isLoading = false;
+        state.isError = true;
+        state.message = action.payload;
+      });
+  },
+});
+
+export const { reset } = songSlice.actions;
+export default songSlice.reducer;
