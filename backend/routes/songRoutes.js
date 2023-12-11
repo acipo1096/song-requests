@@ -1,7 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { getSong } = "../controllers/songController.js";
-
-router.route("/").get(getSong);
+const { getSongs } = require("../controllers/songController");
+router.route("/").get(getSongs);
 
 module.exports = router;

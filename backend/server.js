@@ -9,10 +9,13 @@ connectDB();
 
 const app = express();
 
-app.get("/", (req, res) => {
-  res.send("Hello");
-});
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 
-app.use("api/songs", require("./routes/songRoutes"));
+// app.get("/", (req, res) => {
+//   res.send("Hello");
+// });
+
+app.use("/", require("./routes/songRoutes"));
 
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
