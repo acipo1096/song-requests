@@ -6,8 +6,8 @@ const Song = require("../models/songModel");
 // @route   GET /api/songs/
 // @access  Public
 const getSongs = asyncHandler(async (req, res) => {
-  console.log(req.songs.song);
-  const songs = await Song.find(req.songs);
+  const songs = await Song.find();
+  console.log(songs);
 
   // Need to add error handling
   res.status(200).json(songs);
