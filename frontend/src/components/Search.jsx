@@ -11,7 +11,7 @@ function Search() {
 
   useEffect(() => {
     dispatch(getSongs());
-    console.log(getSongs);
+    console.log(filteredSongs);
   }, []);
 
   // For testing - to be deleted
