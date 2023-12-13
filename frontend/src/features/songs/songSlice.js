@@ -3,7 +3,7 @@ import songService from "./songService";
 
 const initialState = {
   songs: [],
-  song: {},
+  // song: {},
   isError: false,
   isSuccess: false,
   isLoading: false,
@@ -28,7 +28,7 @@ export const getSongs = createAsyncThunk(
 );
 
 export const songSlice = createSlice({
-  name: "song",
+  name: "songs",
   initialState,
   reducers: {
     reset: (state) => initialState,

@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "/";
+const API_URL = "/api/songs/";
 
 // Get songs
 const getSongs = async () => {
