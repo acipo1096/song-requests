@@ -20,6 +20,9 @@ function Search() {
   const [searchItem, setSearchItem] = useState("");
   const [modalName, setModalName] = useState("");
   const [filteredSongs, setFilteredSongs] = useState(songs);
+  const [knownSongs, setKnownSongs] = useState(true);
+
+  console.log(typeof filteredSongs);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -56,29 +59,33 @@ function Search() {
         placeholder="Search for a song"
       />
       <div>
-        {searchItem == ""
-          ? songs.map((song) => (
-              <button
-                onClick={() => {
-                  openModal();
-                  setModalData(song);
-                }}
-                key={song._id}
-              >
-                {song.artist} - {song.song}
-              </button>
-            ))
-          : filteredSongs.map((song) => (
-              <button
-                onClick={() => {
-                  openModal();
-                  setModalData(song);
-                }}
-                key={song._id}
-              >
-                {song.artist} - {song.song}
-              </button>
-            ))}
+        {searchItem == "" ? (
+          songs.map((song) => (
+            <button
+              onClick={() => {
+                openModal();
+                setModalData(song);
+              }}
+              key={song._id}
+            >
+              {song.artist} - {song.song}
+            </button>
+          ))
+        ) : filteredSongs.length != 0 ? (
+          filteredSongs.map((song) => (
+            <button
+              onClick={() => {
+                openModal();
+                setModalData(song);
+              }}
+              key={song._id}
+            >
+              {song.artist} - {song.song}
+            </button>
+          ))
+        ) : (
+          <div>Sorry, I don't know that one!</div>
+        )}
       </div>
 
       <Modal
