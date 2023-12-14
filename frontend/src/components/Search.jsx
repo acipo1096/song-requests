@@ -18,6 +18,7 @@ function Search() {
 
   const { songs, isLoading, isSuccess } = useSelector((state) => state.songs);
   const [searchItem, setSearchItem] = useState("");
+  const [modalName, setModalName] = useState("");
   const [filteredSongs, setFilteredSongs] = useState(songs);
   const dispatch = useDispatch();
 
@@ -25,9 +26,13 @@ function Search() {
     dispatch(getSongs());
   }, [dispatch]);
 
+  const handleModalInput = (e) => {
+    const inputValue = e.target.value;
+    setModalName(inputValue);
+  };
+
   const handleInput = (e) => {
     const searchTerm = e.target.value;
-    // console.log(searchTerm);
     setSearchItem(searchTerm);
 
     const filteredItems = songs.filter(
@@ -37,7 +42,6 @@ function Search() {
     );
 
     setFilteredSongs(filteredItems);
-    // console.log(filteredSongs);
   };
 
   const openModal = () => setModalIsOpen(true);
@@ -92,6 +96,8 @@ function Search() {
               type="text"
               name="name"
               id="name"
+              onChange={handleModalInput}
+              value={modalName}
               placeholder="Your first name"
             />
           </div>
