@@ -1,9 +1,21 @@
 import { get } from "mongoose";
+import Modal from "react-modal";
 import { useState, useEffect } from "react";
 import { getSongs, reset } from "../features/songs/songSlice";
 import { useSelector, useDispatch } from "react-redux";
 
+const customStyles = {
+  content: {
+    width: "600px",
+  },
+};
+
+Modal.setAppElement("#root");
+
 function Search() {
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [modalData, setModalData] = useState("");
+
   const { songs, isLoading, isSuccess } = useSelector((state) => state.songs);
   const [searchItem, setSearchItem] = useState("");
   const [filteredSongs, setFilteredSongs] = useState(songs);
@@ -27,6 +39,10 @@ function Search() {
     setFilteredSongs(filteredItems);
     // console.log(filteredSongs);
   };
+
+  const openModal = () => setModalIsOpen(true);
+  const closeModal = () => setModalIsOpen(false);
+
   return (
     <div>
       <input
@@ -35,24 +51,55 @@ function Search() {
         onChange={handleInput}
         placeholder="Search for a song"
       />
-      <ul>
+      <div>
         {searchItem == ""
           ? songs.map((song) => (
-              <li key={song._id}>
+              <button
+                onClick={() => {
+                  openModal();
+                  setModalData(song);
+                }}
+                key={song._id}
+              >
                 {song.artist} - {song.song}
-              </li>
+              </button>
             ))
           : filteredSongs.map((song) => (
-              <li key={song._id}>
+              <button
+                onClick={() => {
+                  openModal();
+                  setModalData(song);
+                }}
+                key={song._id}
+              >
                 {song.artist} - {song.song}
-              </li>
+              </button>
             ))}
-      </ul>
-      {/* {songs.map((song) => (
-        <div key={song._id} song={songs}>
-          {song.artist} - {song.song}
-        </div>
-      ))} */}
+      </div>
+
+      <Modal
+        isOpen={modalIsOpen}
+        onRequestClose={closeModal}
+        style={customStyles}
+        contentLabel="Submit Song Request"
+      >
+        <h2>Submit Your Request</h2>
+        <button onClick={closeModal}>X</button>
+        <form>
+          <div className="form-group">{`${modalData.artist} - ${modalData.song}`}</div>
+          <div className="form-group">
+            <input
+              type="text"
+              name="name"
+              id="name"
+              placeholder="Your first name"
+            />
+          </div>
+          <div className="form-group">
+            <button type="submit">Submit</button>
+          </div>
+        </form>
+      </Modal>
     </div>
   );
 }
