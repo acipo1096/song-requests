@@ -11,19 +11,11 @@ function Search() {
 
   useEffect(() => {
     dispatch(getSongs());
-    console.log(filteredSongs);
-  }, []);
-
-  // For testing - to be deleted
-  // const songs = [
-  //   { id: 1, songTitle: "Country Roads", artistTitle: "John Denver" },
-  //   { id: 2, songTitle: "Sweet Caroline", artistTitle: "Neil Diamond" },
-  //   { id: 3, songTitle: "Piano Man", artistTitle: "Billy Joel" },
-  // ];
+  }, [dispatch]);
 
   const handleInput = (e) => {
     const searchTerm = e.target.value;
-    console.log(searchTerm);
+    // console.log(searchTerm);
     setSearchItem(searchTerm);
 
     const filteredItems = songs.filter(
@@ -32,8 +24,8 @@ function Search() {
         song.artist.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
-    console.log(filteredItems);
     setFilteredSongs(filteredItems);
+    // console.log(filteredSongs);
   };
   return (
     <div>
@@ -44,11 +36,17 @@ function Search() {
         placeholder="Search for a song"
       />
       <ul>
-        {filteredSongs.map((song) => (
-          <li key={song._id}>
-            {song.artist} - {song.song}
-          </li>
-        ))}
+        {searchItem == ""
+          ? songs.map((song) => (
+              <li key={song._id}>
+                {song.artist} - {song.song}
+              </li>
+            ))
+          : filteredSongs.map((song) => (
+              <li key={song._id}>
+                {song.artist} - {song.song}
+              </li>
+            ))}
       </ul>
       {/* {songs.map((song) => (
         <div key={song._id} song={songs}>
