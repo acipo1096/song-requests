@@ -20,7 +20,7 @@ function Search() {
 
     const filteredItems = songs.filter(
       (song) =>
-        song.artist.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        song.song.toLowerCase().includes(searchTerm.toLowerCase()) ||
         song.artist.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
