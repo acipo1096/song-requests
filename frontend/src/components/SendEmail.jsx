@@ -9,5 +9,3 @@ resend.sendEmail({
   subject: "New Song Request",
   react: <Email />,
 });
-
-export default SendEmail;
