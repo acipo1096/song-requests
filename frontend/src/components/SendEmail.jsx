@@ -7,5 +7,5 @@ resend.sendEmail({
   from: "alex.cipollone10@gmail.com",
   to: "alexfloydmusic2@gmail.com",
   subject: "New Song Request",
-  react: <Email />,
+  react: <Email firstName="Alex" />,
 });

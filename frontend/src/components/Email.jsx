@@ -7,7 +7,9 @@ export function Email(props) {
 
   return (
     <Html lang="en">
-      <Button href={url}>Click me</Button>
+      <Button href={url} style={{ color: "#61dafb", padding: "10px 20px" }}>
+        Click me
+      </Button>
     </Html>
   );
 }
