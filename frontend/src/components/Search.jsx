@@ -34,6 +34,10 @@ function Search() {
     setModalName(inputValue);
   };
 
+  const onSubmit = (e) => {
+    e.preventDefault();
+  };
+
   const handleInput = (e) => {
     const searchTerm = e.target.value;
     setSearchItem(searchTerm);
@@ -109,7 +113,9 @@ function Search() {
             />
           </div>
           <div className="form-group">
-            <button type="submit">Submit</button>
+            <button type="submit" onsSubmit={onSubmit}>
+              Submit
+            </button>
           </div>
         </form>
       </Modal>
