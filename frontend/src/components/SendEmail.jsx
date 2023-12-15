@@ -1,11 +1,16 @@
+import React from "react";
 import { Resend } from "resend";
 import { Email } from "./Email";
 
-const resend = new Resend("re_123456789");
+function SendEmail() {
+  const resend = new Resend(process.env.API_URL);
 
-resend.sendEmail({
-  from: "alex.cipollone10@gmail.com",
-  to: "alexfloydmusic2@gmail.com",
-  subject: "New Song Request",
-  react: <Email firstName="Alex" />,
-});
+  resend.sendEmail({
+    from: "Song Request <onboarding@resend.dev>",
+    to: "alexfloydmusic2@gmail.com",
+    subject: "New Song Request",
+    react: <Email firstName="Alex" />,
+  });
+}
+
+export default SendEmail;

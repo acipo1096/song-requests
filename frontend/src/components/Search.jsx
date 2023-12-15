@@ -1,7 +1,9 @@
 import { get } from "mongoose";
+import { useNavigate } from "react-router-dom";
 import Modal from "react-modal";
 import { useState, useEffect } from "react";
 import { getSongs, reset } from "../features/songs/songSlice";
+import { sendEmail } from "../features/email/emailSlice";
 import { useSelector, useDispatch } from "react-redux";
 
 const customStyles = {
@@ -17,13 +19,17 @@ function Search() {
   const [modalData, setModalData] = useState("");
 
   const { songs, isLoading, isSuccess } = useSelector((state) => state.songs);
+  const {
+    email,
+    isLoading: emailIsLoading,
+    isSuccess: emailIsSuccess,
+  } = useSelector((state) => state.email);
   const [searchItem, setSearchItem] = useState("");
   const [modalName, setModalName] = useState("");
   const [filteredSongs, setFilteredSongs] = useState(songs);
-  const [knownSongs, setKnownSongs] = useState(true);
 
-  console.log(typeof filteredSongs);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   useEffect(() => {
     dispatch(getSongs());
@@ -32,10 +38,6 @@ function Search() {
   const handleModalInput = (e) => {
     const inputValue = e.target.value;
     setModalName(inputValue);
-  };
-
-  const onSubmit = (e) => {
-    e.preventDefault();
   };
 
   const handleInput = (e) => {
@@ -113,7 +115,17 @@ function Search() {
             />
           </div>
           <div className="form-group">
-            <button type="submit" onsSubmit={onSubmit}>
+            <button
+              type="submit"
+              onSubmit={() => {
+                dispatch(
+                  sendEmail({
+                    modalData,
+                    modalName,
+                  })
+                );
+              }}
+            >
               Submit
             </button>
           </div>

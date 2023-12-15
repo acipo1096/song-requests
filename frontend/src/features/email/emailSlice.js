@@ -12,9 +12,9 @@ const initialState = {
 // Get song
 export const sendEmail = createAsyncThunk(
   "email/create",
-  async (_, thunkAPI) => {
+  async ({ songData, firstName }, thunkAPI) => {
     try {
-      return await emailService.sendEmail();
+      return await emailService.sendEmail(songData, firstName);
     } catch (error) {
       const message =
         (error.message && error.response.data && error.response.data.message) ||

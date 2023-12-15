@@ -6,11 +6,11 @@ export function Email(props) {
   const { url } = props;
 
   return (
-    <Html lang="en">
+    <>
       <Button href={url} style={{ color: "#61dafb", padding: "10px 20px" }}>
         Click me
       </Button>
-    </Html>
+    </>
   );
 }
 
