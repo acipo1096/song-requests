@@ -6,3 +6,4 @@
 [ ] Style modals
 [ ] Better design and style rest of app
 [ ] Change png in browser tab - custom png?
+[ ] envs for emailjs?
