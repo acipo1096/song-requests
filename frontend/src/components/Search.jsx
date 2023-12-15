@@ -98,6 +98,7 @@ function Search() {
         {searchItem == "" ? (
           songs.map((song) => (
             <Link
+              className="choice"
               onClick={() => {
                 openModal();
                 setModalData(song);
@@ -110,6 +111,7 @@ function Search() {
         ) : filteredSongs.length != 0 ? (
           filteredSongs.map((song) => (
             <Link
+              className="choice"
               onClick={() => {
                 openModal();
                 setModalData(song);
