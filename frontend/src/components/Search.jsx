@@ -1,4 +1,6 @@
 import { get } from "mongoose";
+import { useRef } from "react";
+import emailjs from "@emailjs/browser";
 import { useNavigate } from "react-router-dom";
 import Modal from "react-modal";
 import { useState, useEffect } from "react";
@@ -38,6 +40,28 @@ function Search() {
   const handleModalInput = (e) => {
     const inputValue = e.target.value;
     setModalName(inputValue);
+  };
+
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_vt6o70n",
+        "template_6p6w8wt",
+        form.current,
+        "Qwk1b7QoE_4Op9U3b"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
   };
 
   const handleInput = (e) => {
@@ -102,16 +126,7 @@ function Search() {
       >
         <h2>Submit Your Request</h2>
         <button onClick={closeModal}>X</button>
-        <form
-          onSubmit={() => {
-            dispatch(
-              sendEmail({
-                modalData,
-                modalName,
-              })
-            );
-          }}
-        >
+        <form ref={form} onSubmit={sendEmail}>
           <div className="form-group">{`${modalData.artist} - ${modalData.song}`}</div>
           <div className="form-group">
             <input
