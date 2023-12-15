@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import emailjs from "@emailjs/browser";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Modal from "react-modal";
 import { useState, useEffect } from "react";
 import { getSongs, reset } from "../features/songs/songSlice";
@@ -97,7 +97,7 @@ function Search() {
       <div>
         {searchItem == "" ? (
           songs.map((song) => (
-            <button
+            <Link
               onClick={() => {
                 openModal();
                 setModalData(song);
@@ -105,11 +105,11 @@ function Search() {
               key={song._id}
             >
               {song.artist} - {song.song}
-            </button>
+            </Link>
           ))
         ) : filteredSongs.length != 0 ? (
           filteredSongs.map((song) => (
-            <button
+            <Link
               onClick={() => {
                 openModal();
                 setModalData(song);
@@ -117,7 +117,7 @@ function Search() {
               key={song._id}
             >
               {song.artist} - {song.song}
-            </button>
+            </Link>
           ))
         ) : (
           <div>Sorry, I don't know that one!</div>
