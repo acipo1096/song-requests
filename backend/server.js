@@ -18,9 +18,9 @@ app.use(express.urlencoded({ extended: false }));
 app.get("/api/email", async (req, res) => {
   try {
     const data = await resend.emails.send({
-      from: "Acme <onboarding@resend.dev>",
+      from: "Song Request <onboarding@resend.dev>",
       to: ["alexfloydmusic2@gmail.com"],
-      subject: "hello world",
+      subject: "New Song Request",
       html: "<strong>it works!</strong>",
     });
     res.status(200).json({ data });
