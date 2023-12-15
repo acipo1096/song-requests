@@ -18,7 +18,13 @@ Modal.setAppElement("#root");
 
 function Search() {
   const [modalIsOpen, setModalIsOpen] = useState(false);
-  const [modalData, setModalData] = useState("");
+  const [modalData, setModalData] = useState([
+    {
+      modalName: "",
+      song: "",
+      artist: "",
+    },
+  ]);
 
   const { songs, isLoading, isSuccess } = useSelector((state) => state.songs);
   const {
@@ -46,6 +52,11 @@ function Search() {
 
   const sendEmail = (e) => {
     e.preventDefault();
+    setModalData({
+      modalName: modalName,
+      song: modalData.song,
+      artist: modalData.artist,
+    });
 
     emailjs
       .sendForm(
@@ -62,6 +73,7 @@ function Search() {
           console.log(error.text);
         }
       );
+    closeModal();
   };
 
   const handleInput = (e) => {
@@ -128,6 +140,12 @@ function Search() {
         <button onClick={closeModal}>X</button>
         <form ref={form} onSubmit={sendEmail}>
           <div className="form-group">{`${modalData.artist} - ${modalData.song}`}</div>
+          <div className="form-group">
+            <input type="hidden" name="song" value={modalData.song} />
+          </div>
+          <div className="form-group">
+            <input type="hidden" name="artist" value={modalData.artist} />
+          </div>
           <div className="form-group">
             <input
               type="text"
