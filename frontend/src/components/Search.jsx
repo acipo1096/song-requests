@@ -1,11 +1,9 @@
-import { get } from "mongoose";
 import { useRef } from "react";
 import emailjs from "@emailjs/browser";
 import { useNavigate } from "react-router-dom";
 import Modal from "react-modal";
 import { useState, useEffect } from "react";
 import { getSongs, reset } from "../features/songs/songSlice";
-import { sendEmail } from "../features/email/emailSlice";
 import { useSelector, useDispatch } from "react-redux";
 
 const customStyles = {
@@ -27,11 +25,7 @@ function Search() {
   ]);
 
   const { songs, isLoading, isSuccess } = useSelector((state) => state.songs);
-  const {
-    email,
-    isLoading: emailIsLoading,
-    isSuccess: emailIsSuccess,
-  } = useSelector((state) => state.email);
+
   const [searchItem, setSearchItem] = useState("");
   const [modalName, setModalName] = useState("");
   const [filteredSongs, setFilteredSongs] = useState(songs);

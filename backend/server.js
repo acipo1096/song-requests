@@ -9,24 +9,9 @@ const PORT = process.env.PORT || 5000;
 connectDB();
 
 const app = express();
-const resend = new Resend(process.env.RESEND_API);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-
-app.post("/api/email/", async (req, res) => {
-  try {
-    const data = await resend.emails.send({
-      from: "Song Request <onboarding@resend.dev>",
-      to: ["alexfloydmusic2@gmail.com"],
-      subject: "New Song Request",
-      html: "<div>`${req.modalData}`</div>",
-    });
-    res.status(200).json({ data });
-  } catch (error) {
-    res.status(500).json({ error });
-  }
-});
 
 app.use("/api/songs", require("./routes/songRoutes"));
 
