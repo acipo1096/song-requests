@@ -5,6 +5,7 @@ import Modal from "react-modal";
 import { useState, useEffect } from "react";
 import { getSongs, reset } from "../features/songs/songSlice";
 import { useSelector, useDispatch } from "react-redux";
+import Suggest from "./Suggest";
 
 const customStyles = {
   content: {
@@ -122,7 +123,11 @@ function Search() {
             </Link>
           ))
         ) : (
-          <div>Sorry, I don't know that one!</div>
+          <div>
+            Sorry, I don't know that one!
+            <br />
+            <Suggest />
+          </div>
         )}
       </div>
 
