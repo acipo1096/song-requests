@@ -2,4 +2,7 @@
 [x] How do I connect backend to Redux?
 [x] create controller > songController to find songs in db
 [x] https://react.email/docs/introduction
-[ ] Probably have to use Redux to send Email.jsx to backend
+[x] configured emailjs
+[ ] Style modals
+[ ] Better design and style rest of app
+[ ] Change png in browser tab - custom png?

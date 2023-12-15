@@ -85,7 +85,7 @@ function Suggest() {
             <textarea
               name="message"
               id="message"
-              placeholder="What songs/artistis should I learn?"
+              placeholder="What songs/artists should I learn?"
             ></textarea>
           </div>
           <div className="form-group">
