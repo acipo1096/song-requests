@@ -102,32 +102,29 @@ function Search() {
       >
         <h2>Submit Your Request</h2>
         <button onClick={closeModal}>X</button>
-        <form>
+        <form
+          onSubmit={() => {
+            dispatch(
+              sendEmail({
+                modalData,
+                modalName,
+              })
+            );
+          }}
+        >
           <div className="form-group">{`${modalData.artist} - ${modalData.song}`}</div>
           <div className="form-group">
             <input
               type="text"
-              name="name"
-              id="name"
+              name="modalName"
+              id="modalName"
               onChange={handleModalInput}
               value={modalName}
               placeholder="Your first name"
             />
           </div>
           <div className="form-group">
-            <button
-              type="submit"
-              onSubmit={() => {
-                dispatch(
-                  sendEmail({
-                    modalData,
-                    modalName,
-                  })
-                );
-              }}
-            >
-              Submit
-            </button>
+            <button type="submit">Submit</button>
           </div>
         </form>
       </Modal>

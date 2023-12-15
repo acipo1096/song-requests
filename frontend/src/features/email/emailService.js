@@ -1,12 +1,12 @@
 import axios from "axios";
 
-const API_URL = "/api/email";
+const API_URL = "/api/email/";
 
 // Create/send email
-const sendEmail = async (songData, firstName) => {
+const sendEmail = async (modalData, modalName) => {
   const response = await axios.post(API_URL, {
-    song: songData,
-    name: firstName,
+    song: modalData,
+    name: modalName,
   });
 
   console.log(response.data);

@@ -12,9 +12,9 @@ const initialState = {
 // Get song
 export const sendEmail = createAsyncThunk(
   "email/create",
-  async ({ songData, firstName }, thunkAPI) => {
+  async ({ modalData, modalName }, thunkAPI) => {
     try {
-      return await emailService.sendEmail(songData, firstName);
+      return await emailService.sendEmail(modalData, modalName);
     } catch (error) {
       const message =
         (error.message && error.response.data && error.response.data.message) ||
@@ -40,7 +40,7 @@ export const emailSlice = createSlice({
       .addCase(sendEmail.fulfilled, (state, action) => {
         state.isLoading = false;
         state.isSuccess = true;
-        state.email = action.payload;
+        state.email.push(action.payload);
       })
       .addCase(sendEmail.rejected, (state, action) => {
         state.isLoading = false;
