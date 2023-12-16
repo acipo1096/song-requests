@@ -17,13 +17,15 @@ body {
   text-decoration: none;
   height: 50px;
   text-align: left;
-  border: solid 1px;
+  border: solid rgba(202, 195, 195, 0.76) 1px;
+  justify-content: center;
+  padding-left: 15px;
   border-radius: 5px;
-  background-color: rgb(202, 195, 195);
+  background-color: rgba(202, 195, 195, 0.76);
   color: black;
 }
 
 .choice:hover {
-  color: blue;
   font-weight: 600;
+  opacity: 0.5;
 }
