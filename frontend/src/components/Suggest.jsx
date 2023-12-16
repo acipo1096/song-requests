@@ -6,6 +6,13 @@ import emailjs from "@emailjs/browser";
 const customStyles = {
   content: {
     width: "600px",
+    height: "200px",
+    top: "10%",
+    left: "25%",
+    right: "auto",
+    bottom: "auto",
+    marginRight: "-50%",
+    position: "relative",
   },
 };
 
@@ -69,7 +76,9 @@ function Suggest() {
         contentLabel="Submit Song Request"
       >
         <h2>Submit Your Request</h2>
-        <button onClick={closeModal}>X</button>
+        <button className="btn-close" onClick={closeModal}>
+          X
+        </button>
         <form ref={form} onSubmit={sendEmail}>
           <div className="form-group">
             <input

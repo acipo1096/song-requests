@@ -29,3 +29,27 @@ body {
   font-weight: 600;
   opacity: 0.5;
 }
+
+.modal-title {
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 10px;
+}
+
+.btn-close {
+  background: none;
+  border: none;
+  color: black;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.btn-close:hover {
+  color: red;
+  transform: scale(0.98);
+}
