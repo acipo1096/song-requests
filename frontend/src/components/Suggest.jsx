@@ -62,13 +62,16 @@ function Suggest() {
 
   return (
     <div>
-      <Link
-        onClick={() => {
-          openModal();
-        }}
-      >
-        Suggest a song here!
-      </Link>
+      <p>
+        Sorry, I don't know that one.&nbsp;
+        <Link
+          onClick={() => {
+            openModal();
+          }}
+        >
+          Suggest a song here!
+        </Link>
+      </p>
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}

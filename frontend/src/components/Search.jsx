@@ -131,8 +131,6 @@ function Search() {
           ))
         ) : (
           <div>
-            Sorry, I don't know that one!
-            <br />
             <Suggest />
           </div>
         )}
