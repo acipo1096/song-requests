@@ -17,11 +17,11 @@ body {
   text-decoration: none;
   height: 50px;
   text-align: left;
-  border: solid rgba(202, 195, 195, 0.76) 1px;
+  border: solid rgba(218, 161, 18, 0.76) 1px;
   justify-content: center;
   padding-left: 15px;
   border-radius: 5px;
-  background-color: rgba(202, 195, 195, 0.76);
+  background-color: rgba(218, 161, 18, 0.76);
   color: black;
 }
 
