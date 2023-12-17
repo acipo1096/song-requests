@@ -76,6 +76,8 @@ function Search() {
         }
       );
     closeModal();
+    // show toast message
+    navigate("/thank-you");
   };
 
   const handleInput = (e) => {

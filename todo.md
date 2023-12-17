@@ -3,7 +3,8 @@
 [x] create controller > songController to find songs in db
 [x] https://react.email/docs/introduction
 [x] configured emailjs
+[ ] Create new modal and component for a thank you and link to Venmo
 [ ] Style modals
 [ ] Better design and style rest of app
-[ ] Change png in browser tab - custom png?
+[x] Change png in browser tab - custom png?
 [ ] envs for emailjs?
