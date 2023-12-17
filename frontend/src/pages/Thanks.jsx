@@ -1,7 +1,7 @@
 import React from "react";
 
-function ThankYou() {
+function Thanks() {
   return <div>Thank you!</div>;
 }
 
-export default ThankYou;
+export default Thanks;
