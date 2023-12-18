@@ -4,7 +4,7 @@
 [x] https://react.email/docs/introduction
 [x] configured emailjs
 [x] Create new component for a thank you and link to Venmo
-[ ] Style modals
+[x] Style modals
 [ ] Better design and style rest of app
 [x] Change png in browser tab - custom png?
 [ ] envs for emailjs?

@@ -78,7 +78,6 @@ function Search() {
           }
         );
       closeModal();
-      // show toast message
       toast.success("Thank you! Your request was submitted");
       navigate("/thanks");
     } catch (error) {
@@ -163,6 +162,7 @@ function Search() {
             <input type="hidden" name="artist" value={modalData.artist} />
           </div>
           <div className="form-group">
+            <label htmlFor="modalName">Your Name</label>
             <input
               type="text"
               name="modalName"

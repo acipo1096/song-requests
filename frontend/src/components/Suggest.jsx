@@ -5,9 +5,9 @@ import emailjs from "@emailjs/browser";
 
 const customStyles = {
   content: {
-    width: "600px",
-    height: "200px",
-    top: "10%",
+    width: "200px",
+    height: "350px",
+    top: "5%",
     left: "25%",
     right: "auto",
     bottom: "auto",
@@ -78,22 +78,24 @@ function Suggest() {
         style={customStyles}
         contentLabel="Submit Song Request"
       >
-        <h2>Submit Your Request</h2>
+        <h2 className="modal-title">Submit Your Request</h2>
         <button className="btn-close" onClick={closeModal}>
           X
         </button>
         <form ref={form} onSubmit={sendEmail}>
           <div className="form-group">
+            <label htmlFor="yourName">Your Name</label>
             <input
               type="text"
               name="yourName"
               id="yourName"
               onChange={handleModalInput}
               value={modalData.yourName}
-              placeholder="Your name"
+              placeholder="Your first name"
             />
           </div>
           <div className="form-group">
+            <label htmlFor="message">Your Suggestions</label>
             <textarea
               name="message"
               id="message"
@@ -101,7 +103,9 @@ function Suggest() {
             ></textarea>
           </div>
           <div className="form-group">
-            <button type="submit">Submit</button>
+            <button className="btn" type="submit">
+              Submit
+            </button>
           </div>
         </form>
       </Modal>
