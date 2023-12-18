@@ -53,3 +53,9 @@ body {
   color: red;
   transform: scale(0.98);
 }
+
+.venmo :nth-child(1) {
+  color: #008cff;
+  height: 75px;
+  width: 75px;
+}
