@@ -55,30 +55,35 @@ function Search() {
 
   const sendEmail = (e) => {
     e.preventDefault();
-    setModalData({
-      modalName: modalName,
-      song: modalData.song,
-      artist: modalData.artist,
-    });
+    try {
+      setModalData({
+        modalName: modalName,
+        song: modalData.song,
+        artist: modalData.artist,
+      });
 
-    emailjs
-      .sendForm(
-        "service_vt6o70n",
-        "template_6p6w8wt",
-        form.current,
-        "Qwk1b7QoE_4Op9U3b"
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
-    closeModal();
-    // show toast message
-    navigate("/thank-you");
+      emailjs
+        .sendForm(
+          "service_vt6o70n",
+          "template_6p6w8wt",
+          form.current,
+          "Qwk1b7QoE_4Op9U3b"
+        )
+        .then(
+          (result) => {
+            console.log(result.text);
+          },
+          (error) => {
+            console.log(error.text);
+          }
+        );
+      closeModal();
+      // show toast message
+      toast.success("Thank you! Your request was submitted");
+      navigate("/thanks");
+    } catch (error) {
+      toast.error("Sorry, something went wrong. Please try again.");
+    }
   };
 
   const handleInput = (e) => {
