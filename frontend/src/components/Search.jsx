@@ -104,6 +104,7 @@ function Search() {
   return (
     <div>
       <input
+        className="search-song"
         type="text"
         value={searchItem}
         onChange={handleInput}
