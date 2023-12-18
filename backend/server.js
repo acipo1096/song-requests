@@ -24,5 +24,8 @@ if (process.env.NODE_ENV === "production") {
   app.get("*", (req, res) =>
     res.sendFile(__dirname, "../", "frontend", "build", "index.html")
   );
+
+  // In package.json
+  // "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend",
 }
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
