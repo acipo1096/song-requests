@@ -10,9 +10,9 @@ import Suggest from "./Suggest";
 
 const customStyles = {
   content: {
-    width: "600px",
-    height: "200px",
-    top: "10%",
+    width: "200px",
+    height: "300px",
+    top: "5%",
     left: "25%",
     right: "auto",
     bottom: "auto",
@@ -155,7 +155,7 @@ function Search() {
           X
         </button>
         <form ref={form} onSubmit={sendEmail}>
-          <div className="form-group">{`${modalData.artist} - ${modalData.song}`}</div>
+          <div className="form-group song-info">{`${modalData.artist} - ${modalData.song}`}</div>
           <div className="form-group">
             <input type="hidden" name="song" value={modalData.song} />
           </div>
@@ -173,7 +173,9 @@ function Search() {
             />
           </div>
           <div className="form-group">
-            <button type="submit">Submit</button>
+            <button className="btn" type="submit">
+              Submit
+            </button>
           </div>
         </form>
       </Modal>

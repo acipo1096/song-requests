@@ -1,6 +1,7 @@
 import { useState, useReact } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { IoLogoVenmo } from "react-icons/io5";
+import { FaArrowCircleLeft } from "react-icons/fa";
 
 function Thanks() {
   return (
@@ -19,6 +20,11 @@ function Thanks() {
           rel="noopener noreferrer"
         >
           <IoLogoVenmo />
+        </Link>
+      </div>
+      <div>
+        <Link to="/">
+          <FaArrowCircleLeft /> Back to Songs
         </Link>
       </div>
     </div>
