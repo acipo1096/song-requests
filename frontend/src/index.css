@@ -105,6 +105,7 @@ body {
   width: 75%;
   height: 30px;
   font-family: inherit;
+  margin: 25px 25px;
 }
 
 .form-group input {
@@ -129,4 +130,8 @@ body {
   border-radius: 5px;
   margin-bottom: 10px;
   font-family: inherit; */
+}
+
+footer {
+  margin-top: 25px;
 }
