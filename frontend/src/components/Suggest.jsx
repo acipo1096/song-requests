@@ -5,10 +5,10 @@ import emailjs from "@emailjs/browser";
 
 const customStyles = {
   content: {
-    width: "200px",
-    height: "350px",
+    width: "300px",
+    height: "300px",
     top: "5%",
-    left: "25%",
+    left: "5%",
     right: "auto",
     bottom: "auto",
     marginRight: "-50%",
