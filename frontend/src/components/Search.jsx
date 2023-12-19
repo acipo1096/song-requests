@@ -13,7 +13,7 @@ const customStyles = {
     width: "250px",
     height: "300px",
     top: "5%",
-    left: "20%",
+    left: "15%",
     right: "auto",
     bottom: "auto",
     marginRight: "-50%",
