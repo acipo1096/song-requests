@@ -137,7 +137,16 @@ footer {
 }
 
 @media only screen and (max-width: 600px) {
+  html,
   body {
+    max-width: 100%;
     overflow-x: hidden;
+  }
+
+  .search-song {
+    width: 85%;
+    height: 40px;
+    font-family: inherit;
+    margin: 25px 25px;
   }
 }
