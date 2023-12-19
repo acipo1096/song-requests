@@ -102,7 +102,7 @@ function Search() {
   const closeModal = () => setModalIsOpen(false);
 
   return (
-    <div>
+    <div className="sub-container">
       <input
         className="search-song"
         type="text"
