@@ -5,6 +5,6 @@
 [x] configured emailjs
 [x] Create new component for a thank you and link to Venmo
 [x] Style modals
-[ ] Better design and style rest of app
+[x] Better design and style rest of app
 [x] Change png in browser tab - custom png?
-[ ] envs for emailjs?
+[x] envs for emailjs?
