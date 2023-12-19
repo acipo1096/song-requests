@@ -10,10 +10,10 @@ import Suggest from "./Suggest";
 
 const customStyles = {
   content: {
-    width: "300px",
+    width: "200px",
     height: "300px",
     top: "5%",
-    left: "30%",
+    left: "35%",
     right: "auto",
     bottom: "auto",
     marginRight: "-50%",
