@@ -7,7 +7,7 @@ import { toast } from "react-toastify";
 const customStyles = {
   content: {
     width: "250px",
-    height: "300px",
+    height: "350px",
     top: "40%",
     left: "50%",
     position: "absolute",
