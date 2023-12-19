@@ -2,6 +2,7 @@ import { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import Modal from "react-modal";
 import emailjs from "@emailjs/browser";
+import { toast } from "react-toastify";
 
 const customStyles = {
   content: {
@@ -9,9 +10,6 @@ const customStyles = {
     height: "300px",
     top: "40%",
     left: "50%",
-    // right: "auto",
-    // bottom: "auto",
-    // marginRight: "-50%",
     position: "absolute",
     transform: "translate(-50%, -50%)",
   },
@@ -38,27 +36,32 @@ function Suggest() {
 
   const sendEmail = (e) => {
     e.preventDefault();
-    setModalData({
-      yourName: modalData.yourName,
-      message: modalData.message,
-    });
+    try {
+      setModalData({
+        yourName: modalData.yourName,
+        message: modalData.message,
+      });
 
-    emailjs
-      .sendForm(
-        "service_vt6o70n",
-        "template_sq5nniq",
-        form.current,
-        "Qwk1b7QoE_4Op9U3b"
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
-    closeModal();
+      emailjs
+        .sendForm(
+          "service_vt6o70n",
+          "template_sq5nniq",
+          form.current,
+          "Qwk1b7QoE_4Op9U3b"
+        )
+        .then(
+          (result) => {
+            console.log(result.text);
+          },
+          (error) => {
+            console.log(error.text);
+          }
+        );
+      closeModal();
+      toast.success("Thank you! Your suggestion was submitted.");
+    } catch (error) {
+      toast.error("Something went wrong. Please try again.");
+    }
   };
 
   return (
