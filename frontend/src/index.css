@@ -55,6 +55,16 @@ body {
   transform: scale(0.98);
 }
 
+.social-media {
+  display: flex;
+  flex-direction: column;
+}
+
+.insta-text {
+  font-weight: 600;
+  margin: 15px 15px;
+}
+
 .venmo :nth-child(1) {
   color: #008cff;
   height: 75px;
