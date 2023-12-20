@@ -1,8 +1,4 @@
-import { useState, useReact } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { IoLogoVenmo } from "react-icons/io5";
-import { FaArrowCircleLeft } from "react-icons/fa";
-import { FaInstagramSquare } from "react-icons/fa";
+import Social from "../components/Social";
 
 function Thanks() {
   return (
@@ -13,29 +9,7 @@ function Thanks() {
         take a break, I'll play your song as one of the first in my next set
       </p>
       <p>If you like what you hear, consider buying me a coffee:</p>
-      <div>
-        <Link
-          className="venmo"
-          to="https://venmo.com/u/alexcip96"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <IoLogoVenmo />
-        </Link>
-        <Link
-          className="instagram"
-          to="https://www.instagram.com/alexfloyd_music/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FaInstagramSquare /> Follow me on Instagram
-        </Link>
-      </div>
-      <div className="back-link">
-        <Link className="back-link-text" to="/">
-          <FaArrowCircleLeft /> Back to Songs
-        </Link>
-      </div>
+      <Social />
     </div>
   );
 }
