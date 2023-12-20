@@ -137,6 +137,10 @@ footer {
   margin-top: 25px;
 }
 
+.back-link {
+  margin-top: 30px;
+}
+
 @media screen and (max-width: 600px) {
   html,
   body {

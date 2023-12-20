@@ -1,5 +1,5 @@
 import { useState, useRef } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Modal from "react-modal";
 import emailjs from "@emailjs/browser";
 import { toast } from "react-toastify";
@@ -32,6 +32,8 @@ function Suggest() {
     setModalData(inputValue);
   };
 
+  const navigate = useNavigate();
+
   const form = useRef();
 
   const sendEmail = (e) => {
@@ -59,6 +61,7 @@ function Suggest() {
         );
       closeModal();
       toast.success("Thank you! Your suggestion was submitted.");
+      navigate("/thanks-for-your-suggestion");
     } catch (error) {
       toast.error("Something went wrong. Please try again.");
     }

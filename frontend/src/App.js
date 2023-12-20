@@ -6,6 +6,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Thanks from "./pages/Thanks";
+import SuggestionThanks from "./pages/SuggestionThanks";
 
 function App() {
   return (
@@ -16,6 +17,10 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/thanks" element={<Thanks />} />
+            <Route
+              path="/thanks-for-your-suggestion"
+              element={<SuggestionThanks />}
+            />
           </Routes>
           <Footer />
         </div>
