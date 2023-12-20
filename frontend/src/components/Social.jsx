@@ -17,7 +17,7 @@ function Social() {
             <IoLogoVenmo />
           </Link>
         </div>
-        <p className="insta-text">Follow me on Instagram</p>
+        <p className="insta-text">Follow me on Instagram:</p>
         <div>
           <Link
             className="instagram"
