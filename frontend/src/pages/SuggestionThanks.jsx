@@ -20,7 +20,7 @@ function Thanks() {
         </Link>
       </div>
       <div className="back-link">
-        <Link to="/">
+        <Link className="back-link-text" to="/">
           <FaArrowCircleLeft /> Back to Songs
         </Link>
       </div>

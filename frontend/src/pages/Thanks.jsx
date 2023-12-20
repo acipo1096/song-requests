@@ -22,8 +22,8 @@ function Thanks() {
           <IoLogoVenmo />
         </Link>
       </div>
-      <div>
-        <Link to="/">
+      <div className="back-link">
+        <Link className="back-link-text" to="/">
           <FaArrowCircleLeft /> Back to Songs
         </Link>
       </div>
