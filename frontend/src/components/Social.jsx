@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { IoLogoVenmo } from "react-icons/io5";
 import { FaArrowCircleLeft } from "react-icons/fa";
-import { FaInstagramSquare } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
 
 function Social() {
   return (
@@ -25,7 +25,7 @@ function Social() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FaInstagramSquare />
+            <FaInstagram />
           </Link>
         </div>
       </div>

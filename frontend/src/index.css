@@ -97,6 +97,7 @@ body {
     #bc1888 100%
   );
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+  color: white;
   height: 75px;
   width: 75px;
 }
