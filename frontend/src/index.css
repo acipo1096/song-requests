@@ -186,10 +186,11 @@ footer {
 
 .back-link :nth-child(1) {
   text-decoration: none;
+  color: black;
   font-weight: 600;
 }
 
-.back-link :nth-child(1):hover {
+.back-link-text:hover {
   transform: scale(0.8);
 }
 
