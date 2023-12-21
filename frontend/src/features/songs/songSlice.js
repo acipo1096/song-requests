@@ -38,7 +38,6 @@ export const songSlice = createSlice({
     builder
       .addCase(getSongs.pending, (state, action) => {
         state.isLoading = true;
-        state.message = action.payload;
       })
       .addCase(getSongs.fulfilled, (state, action) => {
         state.isLoading = false;
