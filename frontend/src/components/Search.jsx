@@ -32,7 +32,7 @@ function Search() {
     },
   ]);
 
-  const { songs, isLoading, message } = useSelector((state) => state.songs);
+  const { songs, isSuccess, message } = useSelector((state) => state.songs);
 
   const [searchItem, setSearchItem] = useState("");
   const [modalName, setModalName] = useState("");
@@ -42,7 +42,7 @@ function Search() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (isLoading) {
+    if (!isSuccess) {
       toast.warning(message);
     }
 
