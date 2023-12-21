@@ -182,7 +182,7 @@ function Search() {
           </div>
         </form>
       </Modal>
-      <h2>Total Songs: {songs.length}</h2>
+      {<Suggest /> ? <p></p> : <h2>Total Songs: {songs.length}</h2>}
     </div>
   );
 }
