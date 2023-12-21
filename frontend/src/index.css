@@ -37,6 +37,8 @@ body {
 
 .form-group {
   margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
 }
 
 .btn-close {
@@ -188,7 +190,5 @@ footer {
     width: 100%;
     margin: 0 auto;
     text-align: center;
-    display: flex;
-    justify-content: center;
   }
 }
