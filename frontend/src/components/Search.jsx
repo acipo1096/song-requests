@@ -7,7 +7,6 @@ import { useState, useEffect } from "react";
 import { getSongs, reset } from "../features/songs/songSlice";
 import { useSelector, useDispatch } from "react-redux";
 import Suggest from "./Suggest";
-import TotalSongs from "./TotalSongs";
 
 const customStyles = {
   content: {
@@ -130,7 +129,7 @@ function Search() {
                 {song.artist} - {song.song}
               </Link>
             ))}
-            <TotalSongs />
+            {/* <TotalSongs /> */}
           </div>
         ) : filteredSongs.length != 0 ? (
           <div>
@@ -146,7 +145,7 @@ function Search() {
                 {song.artist} - {song.song}
               </Link>
             ))}
-            <TotalSongs />
+            {/* <TotalSongs /> */}
           </div>
         ) : (
           <div>
