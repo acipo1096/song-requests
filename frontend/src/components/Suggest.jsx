@@ -72,6 +72,7 @@ function Suggest() {
       <p>
         Sorry, I don't know that one.&nbsp;
         <Link
+          className="suggest-link"
           onClick={() => {
             openModal();
           }}

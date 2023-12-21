@@ -55,6 +55,12 @@ body {
   transform: scale(0.98);
 }
 
+.suggest-link {
+  text-decoration: none;
+  color: rgba(218, 161, 18, 0.76);
+  font-weight: 600;
+}
+
 .social-media {
   display: flex;
   flex-direction: column;
