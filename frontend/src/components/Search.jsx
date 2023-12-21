@@ -43,6 +43,7 @@ function Search() {
   useEffect(() => {
     if (isLoading) {
       toast.info(message);
+      console.log("HUH");
     }
 
     dispatch(getSongs());
