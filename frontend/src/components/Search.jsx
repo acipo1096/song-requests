@@ -30,6 +30,7 @@ function Search() {
       artist: "",
     },
   ]);
+  const [showTotalSongs, setShowTotalSongs] = useState(true);
 
   const { songs, isLoading, message } = useSelector((state) => state.songs);
 
@@ -141,6 +142,7 @@ function Search() {
           ))
         ) : (
           <div>
+            {setShowTotalSongs(false)}
             <Suggest />
           </div>
         )}
@@ -182,7 +184,7 @@ function Search() {
           </div>
         </form>
       </Modal>
-      {<Suggest /> ? <p></p> : <h2>Total Songs: {songs.length}</h2>}
+      {showTotalSongs ? <p></p> : <h2>Total Songs: {songs.length}</h2>}
     </div>
   );
 }
