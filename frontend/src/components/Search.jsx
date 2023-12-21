@@ -41,14 +41,12 @@ function Search() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    dispatch(getSongs());
-  }, [dispatch]);
-
-  useEffect(() => {
     if (isLoading) {
       toast.info(message);
     }
-  });
+
+    dispatch(getSongs());
+  }, [dispatch]);
 
   const handleModalInput = (e) => {
     const inputValue = e.target.value;
