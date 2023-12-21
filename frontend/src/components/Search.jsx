@@ -31,7 +31,7 @@ function Search() {
     },
   ]);
 
-  const { songs, isLoading, isSuccess } = useSelector((state) => state.songs);
+  const { songs, isLoading, message } = useSelector((state) => state.songs);
 
   const [searchItem, setSearchItem] = useState("");
   const [modalName, setModalName] = useState("");
@@ -43,6 +43,12 @@ function Search() {
   useEffect(() => {
     dispatch(getSongs());
   }, [dispatch]);
+
+  useEffect(() => {
+    if (isLoading) {
+      toast.info(message);
+    }
+  });
 
   const handleModalInput = (e) => {
     const inputValue = e.target.value;

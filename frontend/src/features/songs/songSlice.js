@@ -7,7 +7,8 @@ const initialState = {
   isError: false,
   isSuccess: false,
   isLoading: false,
-  message: "",
+  message:
+    "If no songs display immediately, try refreshing your browser and waiting a couple of minutes.",
 };
 
 // Get song
@@ -37,6 +38,7 @@ export const songSlice = createSlice({
     builder
       .addCase(getSongs.pending, (state) => {
         state.isLoading = true;
+        state.message = action.payload;
       })
       .addCase(getSongs.fulfilled, (state, action) => {
         state.isLoading = false;
