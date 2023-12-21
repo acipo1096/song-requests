@@ -141,7 +141,6 @@ function Search() {
           ))
         ) : (
           <div>
-            {setShowTotalSongs(false)}
             <Suggest />
           </div>
         )}
