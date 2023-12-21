@@ -90,7 +90,7 @@ function Suggest() {
           X
         </button>
         <form ref={form} onSubmit={sendEmail}>
-          <div className="form-group">
+          <div className="form-group form-input">
             <label htmlFor="yourName">Your Name</label>
             <input
               type="text"
@@ -101,7 +101,7 @@ function Suggest() {
               placeholder="Your first name"
             />
           </div>
-          <div className="form-group">
+          <div className="form-group form-input">
             <label htmlFor="message">Your Suggestions</label>
             <textarea
               name="message"

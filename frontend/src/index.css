@@ -35,11 +35,7 @@ body {
   text-align: center;
 }
 
-.form-group {
-  margin-bottom: 30px;
-}
-
-.name-input {
+.form-input {
   margin-right: 15px;
 }
 
@@ -128,6 +124,10 @@ body {
 
 .btn:hover {
   transform: scale(0.98);
+}
+
+.form-group {
+  margin-bottom: 30px;
 }
 
 .form-group label {
