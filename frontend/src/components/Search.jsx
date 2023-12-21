@@ -30,7 +30,6 @@ function Search() {
       artist: "",
     },
   ]);
-  const [showTotalSongs, setShowTotalSongs] = useState(true);
 
   const { songs, isLoading, message } = useSelector((state) => state.songs);
 
@@ -115,7 +114,6 @@ function Search() {
       />
       <div>
         {searchItem == "" ? (
-          (setShowTotalSongs(true),
           songs.map((song) => (
             <Link
               className="choice"
@@ -127,9 +125,8 @@ function Search() {
             >
               {song.artist} - {song.song}
             </Link>
-          )))
+          ))
         ) : filteredSongs.length != 0 ? (
-          (setShowTotalSongs(true),
           filteredSongs.map((song) => (
             <Link
               className="choice"
@@ -141,7 +138,7 @@ function Search() {
             >
               {song.artist} - {song.song}
             </Link>
-          )))
+          ))
         ) : (
           <div>
             {setShowTotalSongs(false)}
@@ -186,7 +183,6 @@ function Search() {
           </div>
         </form>
       </Modal>
-      {showTotalSongs(true) ? <p></p> : <h2>Total Songs: {songs.length}</h2>}
     </div>
   );
 }
