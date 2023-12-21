@@ -7,6 +7,7 @@ import { useState, useEffect } from "react";
 import { getSongs, reset } from "../features/songs/songSlice";
 import { useSelector, useDispatch } from "react-redux";
 import Suggest from "./Suggest";
+import TotalSongs from "./TotalSongs";
 
 const customStyles = {
   content: {
@@ -105,40 +106,48 @@ function Search() {
 
   return (
     <div>
-      <input
-        className="search-song"
-        type="text"
-        value={searchItem}
-        onChange={handleInput}
-        placeholder="Search for a song"
-      />
+      <div>
+        <input
+          className="search-song"
+          type="text"
+          value={searchItem}
+          onChange={handleInput}
+          placeholder="Search for a song"
+        />
+      </div>
       <div>
         {searchItem == "" ? (
-          songs.map((song) => (
-            <Link
-              className="choice"
-              onClick={() => {
-                openModal();
-                setModalData(song);
-              }}
-              key={song._id}
-            >
-              {song.artist} - {song.song}
-            </Link>
-          ))
+          <div>
+            {songs.map((song) => (
+              <Link
+                className="choice"
+                onClick={() => {
+                  openModal();
+                  setModalData(song);
+                }}
+                key={song._id}
+              >
+                {song.artist} - {song.song}
+              </Link>
+            ))}
+            <TotalSongs />
+          </div>
         ) : filteredSongs.length != 0 ? (
-          filteredSongs.map((song) => (
-            <Link
-              className="choice"
-              onClick={() => {
-                openModal();
-                setModalData(song);
-              }}
-              key={song._id}
-            >
-              {song.artist} - {song.song}
-            </Link>
-          ))
+          <div>
+            {filteredSongs.map((song) => (
+              <Link
+                className="choice"
+                onClick={() => {
+                  openModal();
+                  setModalData(song);
+                }}
+                key={song._id}
+              >
+                {song.artist} - {song.song}
+              </Link>
+            ))}
+            <TotalSongs />
+          </div>
         ) : (
           <div>
             <Suggest />
