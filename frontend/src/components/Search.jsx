@@ -114,38 +114,45 @@ function Search() {
         placeholder="Search for a song"
       />
       <div>
-        {searchItem == "" ? (
-          songs.map((song) => (
-            <Link
-              className="choice"
-              onClick={() => {
-                openModal();
-                setModalData(song);
-              }}
-              key={song._id}
-            >
-              {song.artist} - {song.song}
-            </Link>
-          ))
-        ) : filteredSongs.length != 0 ? (
-          filteredSongs.map((song) => (
-            <Link
-              className="choice"
-              onClick={() => {
-                openModal();
-                setModalData(song);
-              }}
-              key={song._id}
-            >
-              {song.artist} - {song.song}
-            </Link>
-          ))
-        ) : (
-          <div>
-            {setShowTotalSongs(false)}
-            <Suggest />
-          </div>
-        )}
+        {searchItem == ""
+          ? (setShowTotalSongs(true),
+            songs.map((song) => (
+              <Link
+                className="choice"
+                onClick={() => {
+                  openModal();
+                  setModalData(song);
+                }}
+                key={song._id}
+              >
+                {song.artist} - {song.song}
+              </Link>
+            )))
+          : filteredSongs.length != 0
+          ? (setShowTotalSongs(true),
+            filteredSongs.map(
+              (song) => (
+                { showTotalSongs },
+                (
+                  <Link
+                    className="choice"
+                    onClick={() => {
+                      openModal();
+                      setModalData(song);
+                    }}
+                    key={song._id}
+                  >
+                    {song.artist} - {song.song}
+                  </Link>
+                )
+              )
+            ))
+          : (setShowTotalSongs(false),
+            (
+              <div>
+                <Suggest />
+              </div>
+            ))}
       </div>
 
       <Modal
@@ -184,7 +191,7 @@ function Search() {
           </div>
         </form>
       </Modal>
-      {showTotalSongs ? <p></p> : <h2>Total Songs: {songs.length}</h2>}
+      {showTotalSongs === true ? <p></p> : <h2>Total Songs: {songs.length}</h2>}
     </div>
   );
 }
