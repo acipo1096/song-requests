@@ -115,29 +115,35 @@ function Search() {
       <div>
         {searchItem == "" ? (
           songs.map((song) => (
-            <Link
-              className="choice"
-              onClick={() => {
-                openModal();
-                setModalData(song);
-              }}
-              key={song._id}
-            >
-              {song.artist} - {song.song}
-            </Link>
+            <>
+              <Link
+                className="choice"
+                onClick={() => {
+                  openModal();
+                  setModalData(song);
+                }}
+                key={song._id}
+              >
+                {song.artist} - {song.song}
+              </Link>
+              <h2>Total Songs: {songs.length}</h2>
+            </>
           ))
         ) : filteredSongs.length != 0 ? (
           filteredSongs.map((song) => (
-            <Link
-              className="choice"
-              onClick={() => {
-                openModal();
-                setModalData(song);
-              }}
-              key={song._id}
-            >
-              {song.artist} - {song.song}
-            </Link>
+            <>
+              <Link
+                className="choice"
+                onClick={() => {
+                  openModal();
+                  setModalData(song);
+                }}
+                key={song._id}
+              >
+                {song.artist} - {song.song}
+              </Link>
+              <h2>Total Songs: {songs.length}</h2>
+            </>
           ))
         ) : (
           <div>
@@ -182,7 +188,6 @@ function Search() {
           </div>
         </form>
       </Modal>
-      <h2>Total Songs: {songs.length}</h2>
     </div>
   );
 }
