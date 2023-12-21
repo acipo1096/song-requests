@@ -160,7 +160,7 @@ function Search() {
           <div className="form-group">
             <input type="hidden" name="artist" value={modalData.artist} />
           </div>
-          <div className="form-group">
+          <div className="form-group name-input">
             <label htmlFor="modalName">Your Name</label>
             <input
               type="text"
