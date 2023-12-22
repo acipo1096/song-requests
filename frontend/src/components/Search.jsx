@@ -132,7 +132,7 @@ function Search() {
                 {song.artist} - {song.song}
               </Link>
             ))}
-            <TotalSongs />
+            {/* <TotalSongs /> */}
           </div>
         ) : filteredSongs.length != 0 ? (
           <div>
