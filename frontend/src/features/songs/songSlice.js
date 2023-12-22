@@ -10,12 +10,12 @@ const initialState = {
   message: "Songs might take a minute to appear.",
 };
 
-// Get song
+// Get songs
 export const getSongs = createAsyncThunk(
   "songs/getAll",
   async (_, thunkAPI) => {
     try {
-      return await songService.getSongs().now();
+      return await songService.getSongs();
     } catch (error) {
       const message =
         (error.message && error.response.data && error.response.data.message) ||
