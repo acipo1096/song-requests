@@ -7,7 +7,8 @@ const initialState = {
   isError: false,
   isSuccess: false,
   isLoading: false,
-  message: "Songs might take a minute to appear.",
+  message:
+    "Songs might take a minute to appear - don't scroll away or refresh!",
 };
 
 // Get songs

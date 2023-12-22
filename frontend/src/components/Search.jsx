@@ -46,6 +46,7 @@ function Search() {
   useEffect(() => {
     if (!isSuccess) {
       toast.warning(message);
+      <h3>Loading...</h3>;
     }
 
     dispatch(getSongs());
