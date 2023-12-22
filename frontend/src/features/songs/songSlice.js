@@ -7,8 +7,7 @@ const initialState = {
   isError: false,
   isSuccess: false,
   isLoading: false,
-  message:
-    "If no songs display immediately, wait a minute, then refresh your browser.",
+  message: "Songs might take a minute to appear.",
 };
 
 // Get song

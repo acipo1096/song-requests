@@ -41,7 +41,7 @@ function Search() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (!isSuccess) {
+    if (isLoading) {
       toast.warning(message);
     }
 
