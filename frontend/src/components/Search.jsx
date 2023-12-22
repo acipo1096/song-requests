@@ -31,7 +31,9 @@ function Search() {
     },
   ]);
 
-  const { songs, isSuccess, message } = useSelector((state) => state.songs);
+  const { songs, isSuccess, isLoading, message } = useSelector(
+    (state) => state.songs
+  );
 
   const [searchItem, setSearchItem] = useState("");
   const [modalName, setModalName] = useState("");
