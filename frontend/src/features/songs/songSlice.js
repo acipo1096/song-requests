@@ -15,7 +15,7 @@ export const getSongs = createAsyncThunk(
   "songs/getAll",
   async (_, thunkAPI) => {
     try {
-      return await songService.getSongs();
+      return await songService.getSongs().now();
     } catch (error) {
       const message =
         (error.message && error.response.data && error.response.data.message) ||

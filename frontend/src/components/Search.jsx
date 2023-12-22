@@ -43,7 +43,7 @@ function Search() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (isLoading) {
+    if (!isSuccess) {
       toast.warning(message);
     }
 
@@ -131,7 +131,7 @@ function Search() {
                 {song.artist} - {song.song}
               </Link>
             ))}
-            {/* <TotalSongs /> */}
+            <TotalSongs />
           </div>
         ) : filteredSongs.length != 0 ? (
           <div>
