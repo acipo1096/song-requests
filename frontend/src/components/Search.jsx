@@ -47,7 +47,6 @@ function Search() {
   useEffect(() => {
     if (!isSuccess) {
       toast.warning(message);
-      return <Spinner />;
     }
 
     dispatch(getSongs());
@@ -107,6 +106,10 @@ function Search() {
 
   const openModal = () => setModalIsOpen(true);
   const closeModal = () => setModalIsOpen(false);
+
+  if (isLoading) {
+    return <Spinner />;
+  }
 
   return (
     <div>
