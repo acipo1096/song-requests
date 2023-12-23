@@ -7,6 +7,7 @@ import { useState, useEffect } from "react";
 import { getSongs, reset } from "../features/songs/songSlice";
 import { useSelector, useDispatch } from "react-redux";
 import Suggest from "./Suggest";
+import Spinner from "./Spinner";
 // import TotalSongs from "./TotalSongs";
 
 const customStyles = {
@@ -46,7 +47,7 @@ function Search() {
   useEffect(() => {
     if (!isSuccess) {
       toast.warning(message);
-      <h3>Loading...</h3>;
+      return <Spinner />;
     }
 
     dispatch(getSongs());
