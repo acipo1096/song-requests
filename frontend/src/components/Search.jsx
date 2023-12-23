@@ -106,10 +106,6 @@ function Search() {
   const openModal = () => setModalIsOpen(true);
   const closeModal = () => setModalIsOpen(false);
 
-  if (isLoading) {
-    return <Spinner />;
-  }
-
   return (
     <div>
       <div>
