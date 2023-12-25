@@ -49,12 +49,12 @@ function Search() {
       toast.warning(message);
     }
 
-    if (isLoading) {
-      return <Spinner />;
-    }
-
     dispatch(getSongs());
   }, [dispatch]);
+
+  if (isLoading) {
+    return <Spinner />;
+  }
 
   const handleModalInput = (e) => {
     const inputValue = e.target.value;
