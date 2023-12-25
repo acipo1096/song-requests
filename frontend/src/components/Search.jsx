@@ -52,10 +52,6 @@ function Search() {
     dispatch(getSongs());
   }, [dispatch]);
 
-  if (isLoading) {
-    return <Spinner />;
-  }
-
   const handleModalInput = (e) => {
     const inputValue = e.target.value;
     setModalName(inputValue);
@@ -110,6 +106,10 @@ function Search() {
 
   const openModal = () => setModalIsOpen(true);
   const closeModal = () => setModalIsOpen(false);
+
+  if (isLoading) {
+    return <Spinner />;
+  }
 
   return (
     <div>
