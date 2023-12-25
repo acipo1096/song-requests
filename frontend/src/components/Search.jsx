@@ -7,6 +7,7 @@ import { useState, useEffect } from "react";
 import { getSongs, reset } from "../features/songs/songSlice";
 import { useSelector, useDispatch } from "react-redux";
 import Suggest from "./Suggest";
+import Spinner from "./Spinner";
 // import TotalSongs from "./TotalSongs";
 
 const customStyles = {
@@ -44,12 +45,20 @@ function Search() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (!isSuccess) {
-      toast.warning(message);
-    }
+    // if (!isSuccess) {
+    //   toast.warning(message);
+    // }
 
     dispatch(getSongs());
   }, [dispatch]);
+
+  if (!isSuccess) {
+    toast.warning(message);
+  }
+
+  if (isLoading) {
+    return <Spinner />;
+  }
 
   const handleModalInput = (e) => {
     const inputValue = e.target.value;
