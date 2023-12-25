@@ -45,20 +45,16 @@ function Search() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // if (!isSuccess) {
-    //   toast.warning(message);
-    // }
+    if (!isSuccess) {
+      toast.warning(message);
+    }
+
+    if (isLoading) {
+      return <Spinner />;
+    }
 
     dispatch(getSongs());
   }, [dispatch]);
-
-  if (!isSuccess) {
-    toast.warning(message);
-  }
-
-  if (isLoading) {
-    return <Spinner />;
-  }
 
   const handleModalInput = (e) => {
     const inputValue = e.target.value;
