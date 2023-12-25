@@ -45,9 +45,9 @@ function Search() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (!isSuccess) {
-      toast.warning(message);
-    }
+    // if (!isSuccess) {
+    //   toast.warning(message);
+    // }
 
     dispatch(getSongs());
   }, [dispatch]);
@@ -108,6 +108,7 @@ function Search() {
   const closeModal = () => setModalIsOpen(false);
 
   if (isLoading) {
+    toast.warning(message);
     return <Spinner />;
   }
 
