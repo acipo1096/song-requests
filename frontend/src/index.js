@@ -1,5 +1,5 @@
 import React from "react";
-import { PersistGate } from "redux-persist/integration/react";
+import { PersistGate } from "redux-persist/es/integration/react";
 import { persistStore } from "redux-persist";
 import { createRoot } from "react-dom/client";
 import { Provider } from "react-redux";
