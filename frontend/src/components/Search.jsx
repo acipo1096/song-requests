@@ -33,9 +33,7 @@ function Search() {
     },
   ]);
 
-  const { songs, isSuccess, isLoading, message } = useSelector(
-    (state) => state.songs
-  );
+  const { songs, isSuccess, message } = useSelector((state) => state.songs);
 
   const [searchItem, setSearchItem] = useState("");
   const [modalName, setModalName] = useState("");
@@ -107,9 +105,9 @@ function Search() {
   const openModal = () => setModalIsOpen(true);
   const closeModal = () => setModalIsOpen(false);
 
-  if (isLoading) {
-    return <Spinner />;
-  }
+  // if (isLoading) {
+  //   return <Spinner />;
+  // }
 
   return (
     <div>
