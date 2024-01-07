@@ -6,6 +6,7 @@ const initialState = {
   // song: {},
   isError: false,
   isSuccess: false,
+  isLoading: false,
   message:
     "Songs might take a minute to appear - don't scroll away or refresh!",
 };
@@ -36,13 +37,16 @@ export const songSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(getSongs.pending, (state, action) => {
+        state.isLoading = true;
         state.message = action.payload;
       })
       .addCase(getSongs.fulfilled, (state, action) => {
+        state.isLoading = false;
         state.isSuccess = true;
         state.songs = action.payload;
       })
       .addCase(getSongs.rejected, (state, action) => {
+        state.isLoading = false;
         state.isError = true;
         state.message = action.payload;
       });

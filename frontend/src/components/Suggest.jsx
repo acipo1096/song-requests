@@ -70,7 +70,7 @@ function Suggest() {
   return (
     <div>
       <p>
-        Sorry, I don't know that one.&nbsp;
+        Sorry, I don't know how to play that one.&nbsp;
         <Link
           className="suggest-link"
           onClick={() => {
