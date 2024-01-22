@@ -3,7 +3,7 @@ import { FaRegCopyright } from "react-icons/fa";
 function Footer() {
   return (
     <footer>
-      <FaRegCopyright /> {(Date = newDate().getFullYear())} Alex Floyd
+      <FaRegCopyright /> 2024 Alex Floyd
     </footer>
   );
 }
