@@ -3,7 +3,6 @@ import songService from "./songService";
 
 const initialState = {
   songs: [],
-  // song: {},
   isError: false,
   isSuccess: false,
   isLoading: false,
