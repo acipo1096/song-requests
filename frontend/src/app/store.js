@@ -13,4 +13,11 @@ const persistedReducer = persistReducer(persistConfig, songReducer);
 
 export const store = configureStore({
   reducer: { songs: persistedReducer },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      thunk: {
+        extraArgument: songReducer,
+      },
+      serializableCheck: false,
+    }),
 });
