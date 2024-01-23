@@ -11,21 +11,18 @@ const initialState = {
 };
 
 // Get songs
-export const getSongs = createAsyncThunk(
-  "songs/getAll",
-  async (_, thunkAPI) => {
-    try {
-      return await songService.getSongs();
-    } catch (error) {
-      const message =
-        (error.message && error.response.data && error.response.data.message) ||
-        error.message ||
-        error.toString();
+export const getSongs = createAsyncThunk("songs/getAll", (_, thunkAPI) => {
+  try {
+    return songService.getSongs();
+  } catch (error) {
+    const message =
+      (error.message && error.response.data && error.response.data.message) ||
+      error.message ||
+      error.toString();
 
-      return thunkAPI.rejectWithValue(message);
-    }
+    return thunkAPI.rejectWithValue(message);
   }
-);
+});
 
 export const songSlice = createSlice({
   name: "songs",
