@@ -15,7 +15,13 @@ export const getSongs = createAsyncThunk(
   "songs/getAll",
   async (_, thunkAPI) => {
     try {
-      return await songService.getSongs();
+      const songs = thunkAPI.getState().songs.songs;
+      if (songs.length === 0) {
+        const result = await songService.getSongs();
+        return result;
+      } else {
+        return songs;
+      }
     } catch (error) {
       const message =
         (error.message && error.response.data && error.response.data.message) ||
@@ -37,7 +43,7 @@ export const songSlice = createSlice({
     builder
       .addCase(getSongs.pending, (state, action) => {
         state.isLoading = true;
-        state.message = "Fetching songs...";
+        state.message = "action.payload";
       })
       .addCase(getSongs.fulfilled, (state, action) => {
         state.isLoading = false;
