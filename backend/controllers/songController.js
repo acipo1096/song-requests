@@ -8,7 +8,6 @@ const Song = require("../models/songModel");
 const getSongs = asyncHandler(async (req, res) => {
   const songs = await Song.find().sort({ artist: 1 });
 
-  // Need to add error handling
   res.status(200).json(songs);
 });
 
