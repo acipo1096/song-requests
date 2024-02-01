@@ -7,7 +7,6 @@ const Song = require("../models/songModel");
 // @access  Public
 const getSongs = asyncHandler(async (req, res) => {
   const songs = await Song.find().sort({ artist: 1 });
-  console.log(songs);
 
   // Need to add error handling
   res.status(200).json(songs);
