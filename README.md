@@ -4,7 +4,7 @@
 
 A mobile-friendly app that allows me to take song requests in real time built using the MERN stack. Filter and select a song, enter your name, and watch as your request is submitted to me, where I'll get an email and respond to your request in real time.
 
-To view a demo of this application, see below:
+To view a demo of this application, click [here](https://www.youtube.com/watch?v=FjLgVD7u3co).
 
 ## History/Motivation
 
