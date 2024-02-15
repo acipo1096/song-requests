@@ -12,6 +12,6 @@ As a multi-instrumentalist, I realized that I was having a hard time playing in 
 
 Building this application was a practical way I could use my development skills in conjunction with something I love to do and get paid for.
 
-## Contributing
+## 🤝 Contributing
 
 No contributions being accepted at this time.
