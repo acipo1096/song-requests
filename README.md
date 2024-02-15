@@ -11,7 +11,3 @@ To view a demo of this application, click [here](https://www.youtube.com/watch?v
 As a multi-instrumentalist, I realized that I was having a hard time playing in bands and getting gigs after COVID. It was hard to find a good group of people to consistently play music with. So, I spent a year working on my vocals and building a setlist of 50+ songs that I could go perform live - on my own!
 
 Building this application was a practical way I could use my development skills in conjunction with something I love to do and get paid for.
-
-## 🤝 Contributing
-
-No contributions being accepted at this time.
