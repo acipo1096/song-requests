@@ -8,12 +8,15 @@ let cachedSongs = null;
 // Get songs
 const getSongs = async () => {
   try {
-    if (cachedSongs) return cachedSongs;
+    // if (cachedSongs) return cachedSongs;
+
+    // const response = await axios.get(API_URL);
+
+    // cachedSongs = response.data;
+    // return cachedSongs;
 
     const response = await axios.get(API_URL);
-
-    cachedSongs = response.data;
-    return cachedSongs;
+    return response.data;
   } catch (error) {
     console.error("Error fetching songs!", error);
     throw error;
